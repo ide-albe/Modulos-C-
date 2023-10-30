@@ -1,0 +1,87 @@
+#include "Harl.hpp"
+
+Harl::Harl()
+{
+
+}
+
+void Harl::complain(std::string level)
+{
+	std::string lvl[4] = {"debug", "info", "warning", "error"};
+	void (Harl::*func_array[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	for (int i = 0; i < 4; i++)
+	{
+		if (lvl[i] == level)
+			(this->*func_array[i])();
+	}
+}
+
+void Harl::debug( void )
+{
+	std::cout << std::endl;
+	std::cout << "---------------------------------DEBUG---------------------------------" << std::endl;
+	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-picklespecial" << std::endl;
+	std::cout << "-ketchup burger. I really do!" << std::endl;
+	std::cout << std::endl;
+}
+
+void Harl::info( void )
+{
+	std::cout << std::endl;
+	std::cout << "----------------------------------INFO---------------------------------" << std::endl;
+	std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put" << std::endl;
+	std::cout <<	"enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
+	std::cout << std::endl;
+}
+
+void Harl::warning( void )
+{
+	std::cout << std::endl;
+	std::cout << "---------------------------------WARNING-------------------------------" << std::endl;
+	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming" << std::endl;
+	std::cout << "for years whereas you started working here since last month." << std::endl;
+	std::cout << std::endl;
+}
+
+void Harl::error( void )
+{
+	std::cout << std::endl;
+	std::cout << "---------------------------------ERROR---------------------------------" << std::endl;
+	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
+	std::cout << std::endl;
+}
+
+int main(int argc,  char **argv)
+{
+	Harl harl;
+	std::string lvl[4] = {"debug", "info", "warning", "error"};
+	int option = 0;
+	if (argc == 2)
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			if (lvl[i] == argv[1])
+			{
+				option = i;
+				option += 1;
+				break ;
+			}
+		}
+		switch(option)
+		{
+			case 1:
+				harl.complain("debug");
+			case 2:
+				harl.complain("info");
+			case 3:
+				harl.complain("warning");
+			case 4:
+				harl.complain("error");
+				break ;
+			default:
+				std::cout << "Unkown lvl" << std::endl;
+		}
+	}
+	else
+		std::cout << "Args error! TRY:  ./harl 'lvl_name'" << std::endl;
+}
