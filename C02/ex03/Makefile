@@ -1,7 +1,7 @@
 CC = c++
 NAME = main
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = Fixed.cpp main.cpp
+SRC = main.cpp Fixed.cpp Point.cpp bsp.cpp
 
 all: $(NAME)
 
