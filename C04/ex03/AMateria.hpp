@@ -3,10 +3,11 @@
 
 # include <iostream>
 # include <string>
+# include "ICharacter.hpp"
 
 class AMateria {
-	private:
-
+	protected:
+		const std::string type;
 	public:
 		AMateria();
 		AMateria(std::string const & type);

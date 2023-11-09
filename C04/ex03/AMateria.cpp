@@ -2,7 +2,13 @@
 
 AMateria::AMateria()
 {
-	std::cout << "A_Materia constructor called!" << std::endl;
+	this->type = "";
+	std::cout << "AMateria constructor called!" << std::endl;
+}
+
+std::string const & AMateria::getType() const
+{
+	return this->type;
 }
 
 AMateria& AMateria::operator=(const AMateria& other)
@@ -15,6 +21,7 @@ AMateria& AMateria::operator=(const AMateria& other)
 
 AMateria::AMateria(const AMateria &copia)
 {
+	(void)copia;
 	std::cout << "AMateria copy called" << std::endl;
 }
 
