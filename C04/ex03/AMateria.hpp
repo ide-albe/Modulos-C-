@@ -5,19 +5,22 @@
 # include <string>
 # include "ICharacter.hpp"
 
+class ICharacter;
+
 class AMateria {
+
 	protected:
-		const std::string type;
+		std::string type;
 	public:
 		AMateria();
 		AMateria(std::string const & type);
-		~AMateria();
-		AMateria& operator=(const AMateria& other);
 		AMateria(const AMateria &copia);
+		virtual ~AMateria();
+		virtual AMateria& operator=(const AMateria& other);
 
 		std::string const & getType() const; //Returns the materia type
 		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
+		// virtual void use(ICharacter& target);
 };
 
 #endif

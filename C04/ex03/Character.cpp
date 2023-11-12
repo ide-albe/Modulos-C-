@@ -2,13 +2,19 @@
 
 Character::Character()
 {
-	this->type = "";
+	this->name = "";
 	std::cout << "Character constructor called!" << std::endl;
 }
 
-std::string const & Character::getType() const
+Character::Character(const std::string &name_to_put)
 {
-	return this->type;
+	this->name = name_to_put;
+	std::cout << "Character constructor called!" << std::endl;
+}
+
+std::string const &Character::getName() const
+{
+	return this->name;
 }
 
 Character& Character::operator=(const Character& other)
@@ -19,9 +25,9 @@ Character& Character::operator=(const Character& other)
 	return *this;
 }
 
-Character::Character(const AMateria &copia)
+Character::Character(const Character &copia)
 {
-	(void)copia;
+	this->name = copia.name;
 	std::cout << "Character copy called" << std::endl;
 }
 

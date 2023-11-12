@@ -3,19 +3,24 @@
 
 # include <iostream>
 # include <string>
-# include "AMateria.hpp"
 
-class Character {
+# include "ICharacter.hpp"
+
+class Character : public ICharacter {
+
 	protected:
-		const std::string type;
+		std::string name;
 	public:
 		Character();
-		Character(std::string const & type);
-		~Character();
-		AMateria& operator=(const Character& other);
+		Character(const std::string name);
 		Character(const Character &copia);
-
-		virtual void use(ICharacter& target);
+		~Character();
+		Character& operator=(const Character& other);
+	
+		std::string const &getName() const;
+		void equip(AMateria* m);
+		void unequip(int idx);
+		void use(int idx, ICharacter& target);
 };
 
 #endif

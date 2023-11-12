@@ -1,7 +1,7 @@
 CC = c++
 NAME = animal
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp AMateria.cpp 
+SRC = main.cpp AMateria.cpp MateriaSource.cpp
 
 all: $(NAME)
 

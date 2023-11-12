@@ -2,7 +2,7 @@
 
 Ice::Ice()
 {
-	this->type = "ice";
+	type = "ice";
 	std::cout << "ice constructor called!" << std::endl;
 }
 
@@ -17,7 +17,10 @@ Ice *Ice::clone() const
 	return new_obj;
 }
 
-void use
+void Ice::use(ICharacter &target)
+{
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+}
 
 Ice& Ice::operator=(const Ice& other)
 {

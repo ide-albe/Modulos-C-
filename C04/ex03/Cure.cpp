@@ -2,7 +2,7 @@
 
 Cure::Cure()
 {
-	this->type = "cure";
+	type = "cure";
 	std::cout << "Cure constructor called!" << std::endl;
 }
 
@@ -11,10 +11,15 @@ std::string const & Cure::getType() const
 	return this->type;
 }
 
-Cure *Cure::clone() const
+AMateria* Cure::clone() const
 {
 	Cure *new_obj = new Cure;
 	return new_obj;
+}
+
+void Cure::use(ICharacter &target)
+{
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
 
 Cure& Cure::operator=(const Cure& other)

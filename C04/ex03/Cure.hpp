@@ -3,19 +3,19 @@
 
 # include <iostream>
 # include <string>
+
 # include "AMateria.hpp"
 
-class Cure : public AMateria{
-	private:
-		std::string type;
+class Cure : public AMateria {
+
 	public:
 		Cure();
-		Cure(std::string const & type);
+		Cure(const Cure &copia);
 		~Cure();
 		Cure& operator=(const Cure& other);
-		Cure(const Cure &copia);
-		std::string const & getType() const;
-		Cure *clone() const;
+
+		virtual AMateria *clone() const;
+		virtual void use(ICharacter &target);
 };
 
 #endif
