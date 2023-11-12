@@ -9,7 +9,6 @@
 int main()
 {
 	IMateriaSource* src = new MateriaSource();
-	(void)src;
 	// src->learnMateria(new Ice());
 	// src->learnMateria(new Cure());
 	// ICharacter* me = new Character("me");
