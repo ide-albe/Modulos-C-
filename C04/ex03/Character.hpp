@@ -10,9 +10,10 @@ class Character : public ICharacter {
 
 	protected:
 		std::string name;
+		AMateria *slot[4];
 	public:
 		Character();
-		Character(const std::string name);
+		Character(const std::string &name);
 		Character(const Character &copia);
 		~Character();
 		Character& operator=(const Character& other);

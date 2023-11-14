@@ -35,3 +35,8 @@ AMateria::~AMateria()
 {
 	std::cout << "AMateria destructor called!" << std::endl;
 }
+
+void AMateria::use(ICharacter &target)
+{
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+}

@@ -11,7 +11,7 @@ std::string const & Ice::getType() const
 	return this->type;
 }
 
-Ice *Ice::clone() const
+AMateria* Ice::clone() const
 {
 	Ice *new_obj = new Ice;
 	return new_obj;
@@ -19,7 +19,7 @@ Ice *Ice::clone() const
 
 void Ice::use(ICharacter &target)
 {
-	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+	std::cout << "* shoots an ice bolt at " << target.getName() << "*" << std::endl;
 }
 
 Ice& Ice::operator=(const Ice& other)
@@ -30,11 +30,11 @@ Ice& Ice::operator=(const Ice& other)
 	return *this;
 }
 
-Ice::Ice(const Ice &copia)
-{
-	(void)copia;
-	std::cout << "ice copy called" << std::endl;
-}
+// Ice::Ice(const Ice &copia)
+// {
+// 	(void)copia;
+// 	std::cout << "ice copy called" << std::endl;
+// }
 
 Ice::~Ice()
 {

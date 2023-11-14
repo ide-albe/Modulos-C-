@@ -13,6 +13,8 @@ class Ice : public AMateria{
 		Ice(const Ice &copia);
 		~Ice();
 		Ice& operator=(const Ice& other);
+
+		std::string const & getType() const;
 	
 		virtual AMateria* clone() const;
 		virtual void use(ICharacter &target);

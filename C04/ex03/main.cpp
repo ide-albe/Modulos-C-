@@ -5,25 +5,34 @@
 #include "Cure.hpp"
 #include "Character.hpp"
 #include "MateriaSource.hpp"
+#include <stdlib.h>
 
 int main()
 {
 	IMateriaSource* src = new MateriaSource();
-	(void)src;
-	// src->learnMateria(new Ice());
-	// src->learnMateria(new Cure());
-	// ICharacter* me = new Character("me");
-	// AMateria* tmp;
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	ICharacter* Goku = new Character("Goku");
+	AMateria* tmp;
 	// tmp = src->createMateria("ice");
-	// me->equip(tmp);
+
+	//AL HACER UN CREAT MATERIA DE ALGO NO EXISTENTE DA SEGFAULT!
+
+	tmp = src->createMateria("nose");
+
+	//////////////////////////////////////////////////////////
+
+	//ARREGLAR Y CREAR UN MAIN PERSONALIZADO PARA COMPROBAR CADA FUNCION
+	Goku->equip(tmp);
 	// tmp = src->createMateria("cure");
-	// me->equip(tmp);
+	// Goku->equip(tmp);
 	// ICharacter* bob = new Character("bob");
-	// me->use(0, *bob);
-	// me->use(1, *bob);
+	// Goku->use(0, *bob);
+	// Goku->use(1, *bob);
 
 	// delete bob;
-	// delete me;
+	// delete Goku;
 	// delete src;
-	// return 0;
+	system("leaks -q materisa");
+	return 0;
 }

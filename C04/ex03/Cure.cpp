@@ -30,11 +30,11 @@ Cure& Cure::operator=(const Cure& other)
 	return *this;
 }
 
-Cure::Cure(const Cure &copia)
-{
-	(void)copia;
-	std::cout << "Cure copy called" << std::endl;
-}
+// Cure::Cure(const Cure &copia)
+// {
+// 	(void)copia;
+// 	std::cout << "Cure copy called" << std::endl;
+// }
 
 Cure::~Cure()
 {
